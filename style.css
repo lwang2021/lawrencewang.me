@@ -85,17 +85,21 @@ body {
   }
 }
 
-/* .page_header #opening {
-  padding-top: 0;
-  font-size: var(--font_size);
-} */
+.center {
+  width: 80%;
+  padding-bottom: 3%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
 
 .info_header {
   padding-left: 20%;
   padding-right: 20%;
   padding-bottom: 0;
   margin-bottom: 0;
-  font-size: calc(2*var(--font_size));
+  font-size: calc(1.5*var(--font_size));
 }
 
 .page_info {

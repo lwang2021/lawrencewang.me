@@ -16,16 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!isErasing && messageElement.textContent === message) {
             console.log(message);
             isErasing = true;
-            setTimeout(typeMessage, 1000); // Pause before erasing (adjust delay as needed)
+            setTimeout(typeMessage, 1000);
         } else if (isErasing && messageElement.textContent === "") {
             isErasing = false;
             messageIndex = (messageIndex + 1) % messages.length;
-            setTimeout(typeMessage, 500); // Pause before typing the next message (adjust delay as needed)
+            setTimeout(typeMessage, 500);
         } else {
             const text = messageElement.textContent;
             messageElement.textContent = isErasing ? text.slice(0, -1) : message.slice(0, text.length + 1);
             console.log(message)
-            setTimeout(typeMessage, 100); // Typing speed (adjust as needed)
+            setTimeout(typeMessage, 100);
         }
     }
 
