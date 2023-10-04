@@ -58,9 +58,37 @@ body {
 }
 
 .page_header #opening {
+  display: inline-block;
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid #000;
+  animation: typing 5s steps(40) forwards, erasing 2s steps(40) forwards 5s;
+}
+
+@keyframes typing {
+  0% {
+      width: 0;
+  }
+  100% {
+      width: 100%;
+  }
+}
+
+@keyframes erasing {
+  0%,
+  100% {
+      width: 100%;
+  }
+  50% {
+      width: 0;
+  }
+}
+
+/* .page_header #opening {
   padding-top: 0;
   font-size: var(--font_size);
-}
+} */
 
 .info_header {
   padding-left: 20%;

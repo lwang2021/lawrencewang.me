@@ -5,11 +5,36 @@ document.addEventListener("DOMContentLoaded", function () {
     const projectLink = document.getElementById("projects");
     const researchLink = document.getElementById("research");
 
+    const messages = ["Hi, my name is", "你好，我叫", "Bonjour, je m'appelle"];
+    let messageIndex = 0;
+    let isErasing = false;
+
+    function typeMessage() {
+        const messageElement = document.getElementById("opening");
+        const message = messages[messageIndex];
+        
+        if (!isErasing && messageElement.textContent === message) {
+            console.log(message);
+            isErasing = true;
+            setTimeout(typeMessage, 1000); // Pause before erasing (adjust delay as needed)
+        } else if (isErasing && messageElement.textContent === "") {
+            isErasing = false;
+            messageIndex = (messageIndex + 1) % messages.length;
+            setTimeout(typeMessage, 500); // Pause before typing the next message (adjust delay as needed)
+        } else {
+            const text = messageElement.textContent;
+            messageElement.textContent = isErasing ? text.slice(0, -1) : message.slice(0, text.length + 1);
+            console.log(message)
+            setTimeout(typeMessage, 100); // Typing speed (adjust as needed)
+        }
+    }
+
     function loadContent(htmlFile) {
         fetch(htmlFile)
             .then(response => response.text())
             .then(data => {
                 contentArea.innerHTML = data;
+                typeMessage();
             })
             .catch(error => {
                 console.error("Error loading content: ", error);
@@ -24,17 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     aboutLink.addEventListener("click", function () {
         loadContent("src/pages/about.html");
-        change(2)
+        change(2);
     });
 
     aboutLink2.addEventListener("click", function () {
         loadContent("src/pages/about.html");
-        change(2)
+        change(2);
     });
 
     projectLink.addEventListener("click", function () {
         loadContent("src/pages/project.html");
-        change(3)
+        change(3);
     });
 
     researchLink.addEventListener("click", function () {
@@ -43,5 +68,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     loadContent("src/pages/about.html");
-    change(2)
+    change(2);
 });
