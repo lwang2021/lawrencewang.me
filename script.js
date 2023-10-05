@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const message = messages[messageIndex];
         
         if (!isErasing && messageElement.textContent === message) {
-            console.log(message);
             isErasing = true;
             setTimeout(typeMessage, 1000);
         } else if (isErasing && messageElement.textContent === "") {
@@ -24,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             const text = messageElement.textContent;
             messageElement.textContent = isErasing ? text.slice(0, -1) : message.slice(0, text.length + 1);
-            console.log(message)
             setTimeout(typeMessage, 100);
         }
     }

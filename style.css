@@ -94,6 +94,15 @@ body {
   height: auto;
 }
 
+.center_vertical {
+  height: auto;
+  width: 20%;
+  padding-bottom: 3%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .info_header {
   padding-left: 20%;
   padding-right: 20%;
