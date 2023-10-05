@@ -9,6 +9,19 @@ body {
   color: white;
 }
 
+.links {
+  padding-top: 1%;
+  display: block;
+  text-align: center;
+  height: auto;
+}
+
+.links a img {
+  width: 3%;
+  padding: 2%;
+  height: auto;
+}
+
 .topnav {
   overflow: hidden;
   background-color: black;
@@ -140,4 +153,11 @@ hr.solid {
 }
 #content {
   z-index: 10;
+}
+
+footer {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
 }
