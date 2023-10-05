@@ -1,2 +1,2 @@
-# lwang2021.github.io
+# lawrencewang.me
 My personal website's code
